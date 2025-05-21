@@ -46,11 +46,11 @@ public class SpeedEffect {
         float originalXVelocity = velocityComponent.xVelocity();
         float originalYVelocity = velocityComponent.yVelocity();
 
-        // Appliquer l'augmentation de vitesse immédiatement
+        // geschwendigkeit steigeren
         velocityComponent.xVelocity(originalXVelocity * speedIncrease);
         velocityComponent.yVelocity(originalYVelocity * speedIncrease);
 
-        // Planifier la restauration des vitesses initiales après la durée spécifiée
+        // geschwendigkeit restorieren
         EVENT_SCHEDULER.scheduleAction(
             () -> {
                 velocityComponent.xVelocity(originalXVelocity);
